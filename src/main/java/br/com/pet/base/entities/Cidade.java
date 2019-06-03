@@ -6,10 +6,11 @@ import javax.persistence.*;
 
 @Data
 @Entity
+@Table(uniqueConstraints = {@UniqueConstraint(columnNames = {"nome", "estado_id"})})
 public class Cidade {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nome;
     @ManyToOne

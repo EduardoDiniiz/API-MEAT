@@ -12,18 +12,18 @@ public enum SaudeAtual {
     private int cod;
     private String descricao;
 
-    private SaudeAtual(int cod, String descricao){
+    private SaudeAtual(int cod, String descricao) {
         this.cod = cod;
         this.descricao = descricao;
     }
 
     public static SaudeAtual toEnum(Integer cod) {
-        if(cod == null) {
+        if (cod == null) {
             return null;
         }
 
-        for (SaudeAtual saudeAtual: SaudeAtual.values()) {
-            if(cod.equals(saudeAtual.cod)){
+        for (SaudeAtual saudeAtual : SaudeAtual.values()) {
+            if (cod.equals(saudeAtual.cod)) {
                 return saudeAtual;
             }
         }

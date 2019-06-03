@@ -11,7 +11,7 @@ import java.util.*;
 public class Cliente {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(unique = true)
     private String email;
@@ -30,4 +30,17 @@ public class Cliente {
     @CollectionTable(name = "TELEFONE")
     private Set<String> telefone = new HashSet<>();
 
+    public Cliente(String email, String nome, Date dataNascimento, String cpf, String senha, List<Animal> animais, List<Endereco> enderecos, Date dataCadastro) {
+        this.email = email;
+        this.nome = nome;
+        this.dataNascimento = dataNascimento;
+        this.cpf = cpf;
+        this.senha = senha;
+        this.animais = animais;
+        this.endereco = enderecos;
+        this.dataCadastro = dataCadastro;
+    }
+
+    public Cliente() {
+    }
 }

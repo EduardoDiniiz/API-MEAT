@@ -1,9 +1,9 @@
 package br.com.pet.base.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.Date;
 
 @Data
@@ -11,10 +11,11 @@ import java.util.Date;
 public class Agendamento {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String descricao;
     private Date data;
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "animal_id")
     private Animal animal;
